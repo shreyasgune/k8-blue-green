@@ -40,10 +40,11 @@ service/blizz-server created
 Testing
 ```
 minikube service blizz-server --url
-curl $(minikube service blizz-server --url)/version
+curl -s $(minikube service blizz-server --url)/version
+    {"version": "test", "errors": []}
 ```
 
-Testing Redis
+Testing Redis if using `assets/redis` manifests
 ```
 Shell 1:
 kubectl port-forward svc/redis-master 6379:6379
@@ -56,6 +57,65 @@ redis-cli -h localhost -p 6379
 localhost:6379> PING
 PONG
 ```
+
+## Testing BLUE-GREEN
+- Build, test & push Blue Image
+```
+docker build --build-arg BLIZZ_VERSION=blue  -t shreyasgune/blizz-server:blue .
+docker run -d -p 8080:8080 --name sgune-blizz-blue  -it shreyasgune/blizz-server:blue
+curl http://localhost:8080/version
+    {"version": "blue", "errors": []}
+docker push docker.io/shreyasgune/blizz-server:blue
+docker rm -f sgune-blizz-blue
+```
+
+- Build, test & push Green Image
+```
+docker build --build-arg BLIZZ_VERSION=green  -t shreyasgune/blizz-server:green .
+docker run -d -p 8080:8080 --name sgune-blizz-green  -it shreyasgune/blizz-server:green
+curl http://localhost:8080/version
+    {"version": "green", "errors": []}
+docker push docker.io/shreyasgune/blizz-server:green
+docker rm -f sgune-blizz-green
+```
+ 
+- Deploy Blue to Minikube
+```
+sed 's/{{BLIZZ_VERSION}}/blue/g' k8s/*.yaml > blue.yaml && kubectl apply -f blue.yaml
+deployment.apps/blizz-server-blue created
+service/blizz-server created
+```
+
+- Start a ping test in a separate shell
+```
+./ping-test.sh
+```
+
+- Deploy Green to Minikube
+```
+sed 's/{{BLIZZ_VERSION}}/blue/g' k8s/*.yaml > blue.yaml && kubectl apply -f green.yaml
+deployment.apps/blizz-server-green created
+service/blizz-server changed
+```
+
+>Observe the ouput on the `ping-test.sh` shell
+
+- Cleanup
+```
+rm -f blue.yaml
+rm -f green.yaml
+```
+
+## Github Actions
+You can also run the following jobs if you don't wish to do local-testing
+- `app-build-push` workflow: Builds the image with a certain version number, tags it and pushes it to image repository
+- `test-image` workflow: Tests a particular version of an existing image
+- `minikube-test` workflow
+    - Creates a sandboxed Minikube cluster of 1 on the github-runner
+    - Deploys a particular version in Minikube
+    - Tests it
+
+
 
 ## The problem statement
 ```
