@@ -75,7 +75,7 @@ docker build --build-arg BLIZZ_VERSION=green  -t shreyasgune/blizz-server:green 
 docker run -d -p 8080:8080 --name sgune-blizz-green  -it shreyasgune/blizz-server:green
 curl http://localhost:8080/version
     {"version": "green", "errors": []}
-docker push docker.io/shreyasgune/blizz-server:blue
+docker push docker.io/shreyasgune/blizz-server:green
 docker rm -f sgune-blizz-green
 ```
  
