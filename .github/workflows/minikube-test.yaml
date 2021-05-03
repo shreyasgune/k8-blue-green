@@ -25,19 +25,22 @@ jobs:
       run: cat k8s/deployment.yaml | grep "image"
 
     - name: Start minikube
-      uses: medyagh/setup-minikube@master
-
-    - name: Try the cluster !
-      run: kubectl get pods 
+      uses: medyagh/setup-minikube@master 
 
     - name: Deploy to minikube
       run: 
         kubectl apply -f k8s
+  
+    - name: Get List of Pods
+      run: kubectl get pods
+
+    - name: Get List of Services
+      run: kubectl get svc 
 
     - name: Test service URLs
       run: |
         sleep 4 
         minikube service blizz-server --url
-        echo -n "------------------opening the service------------------"
+        echo -n "\n------------------opening the service------------------\n"
         sleep 4
         curl $(minikube service blizz-server --url)/version
