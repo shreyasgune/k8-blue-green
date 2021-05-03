@@ -32,7 +32,7 @@ jobs:
       #   id: image_test
       #   run: curl "${{ steps.container-ip.outputs.container_ip }}:8080/version"
       - name: test the curl
-        run: curl localhost:8080/version 
+        run: sleep 5 && curl localhost:8080/version 
 
 
 

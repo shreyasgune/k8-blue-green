@@ -13,13 +13,27 @@ spec:
         app: blizz-server-{{BLIZZ_VERSION}}
     spec:
       containers:
+      - name: redis
+        image: redis
+        ports:
+          - containerPort: 6379
+            name: redis
+            protocol: TCP        
       - name: blizz-server
         image: docker.io/shreyasgune/blizz-server:{{BLIZZ_VERSION}}
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
         ports:
         - containerPort: 8080
+        env:
+          - name: REDIS_ADDR
+            value: localhost
         livenessProbe:
           httpGet:
             path: /version
             port: 8080
-          initialDelaySeconds: 3
+          initialDelaySeconds: 10
           periodSeconds: 3
