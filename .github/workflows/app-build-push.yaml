@@ -37,11 +37,15 @@ jobs:
       
       - name: Run the built image
         id: image_run
-        run: docker run -d -p 8080:8080 docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
+        run: docker run -d --name=blizz-test docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
       
+      - name: Get the IP of the running container
+        id: container-ip
+        run: echo "::set-output name=container_ip::$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' blizz-test)"
+
       - name: Test the image
         id: image_test
-        run: curl localhost:8080/version
+        run: curl "${{ steps.container-ip.outputs.container_ip }}:8080/version"
       
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
