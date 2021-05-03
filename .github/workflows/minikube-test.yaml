@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: replace the version_number
-      run: sed -n 's/BLIZZ_VERSION/${{ github.event.inputs.version }}' deployment/deployment.yaml
+      run: sed -n 's/BLIZZ_VERSION/${{ github.event.inputs.version }}/' deployment/deployment.yaml
 
     - name: verify the substituion
       run: cat deployment/deployment.yaml | grep "image"
