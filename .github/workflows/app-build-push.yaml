@@ -41,7 +41,7 @@ jobs:
       
       - name: Test the image
         id: image_test
-        run: curl localhost:8081/version
+        run: curl localhost:8080/version
       
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
