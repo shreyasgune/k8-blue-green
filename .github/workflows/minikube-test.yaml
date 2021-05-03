@@ -1,6 +1,7 @@
 name: Minikube Test
 
 on:
+  pull_request:
   workflow_dispatch:
     inputs:
       version:
@@ -32,10 +33,11 @@ jobs:
 
     - name: Deploy to minikube
       run: 
-        kubectl apply -f deployment
+        kubectl apply -f k8s
 
     - name: Test service URLs
-      run: | 
+      run: |
+        sleep 4 
         minikube service list
         minikube service blizz-server --url
         echo -n "------------------opening the service------------------"
