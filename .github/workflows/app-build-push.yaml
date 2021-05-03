@@ -37,7 +37,7 @@ jobs:
       
       - name: Run the built image
         id: image_run
-        run: docker run -d --name=blizz-test docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
+        run: docker run -d --network host --name=blizz-test docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
       
       - name: Get the IP of the running container
         id: container-ip
