@@ -57,10 +57,9 @@ jobs:
       
       - name: test the curl
         run: curl localhost:8080/version 
-        
+
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-    # Service containers to run with `runner-job`
 
 
 

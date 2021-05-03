@@ -16,13 +16,13 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: replace the version_number in deployment yaml
-      run: sed -in 's/{{BLIZZ_VERSION}}/${{ github.event.inputs.version }}/g' deployment/deployment.yaml
+      run: sed -in 's/{{BLIZZ_VERSION}}/${{ github.event.inputs.version }}/g' k8s/deployment.yaml
 
     - name: replace the version_number in svc yaml
-      run: sed -in 's/{{BLIZZ_VERSION}}/${{ github.event.inputs.version }}/g' deployment/svc.yaml
+      run: sed -in 's/{{BLIZZ_VERSION}}/${{ github.event.inputs.version }}/g' k8s/svc.yaml
 
     - name: verify the substituion
-      run: cat deployment/deployment.yaml | grep "image"
+      run: cat k8s/deployment.yaml | grep "image"
 
     - name: Start minikube
       uses: medyagh/setup-minikube@master
