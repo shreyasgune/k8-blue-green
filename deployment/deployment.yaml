@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blizz-server
+  name: blizz-server-{{BLIZZ_VERSION}}
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: blizz-server
+      app: blizz-server-{{BLIZZ_VERSION}}
   template:
     metadata:
       labels:
-        app: blizz-server
+        app: blizz-server-{{BLIZZ_VERSION}}
     spec:
       containers:
       - name: blizz-server
-        image: docker.io/shreyasgune/blizz-server:BLIZZ_VERSION
+        image: docker.io/shreyasgune/blizz-server:{{BLIZZ_VERSION}}
         ports:
         - containerPort: 8080
         livenessProbe:

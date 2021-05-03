@@ -13,4 +13,4 @@ spec:
     targetPort: 8080
     name: https
   selector:
-    app: blizz-server
+    app: blizz-server-{{BLIZZ_VERSION}}
