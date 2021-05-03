@@ -11,14 +11,6 @@ on:
 jobs:
   docker-build-push:
     runs-on: ubuntu-latest
-    services:
-      # Label used to access the service container
-      blizz-server:
-        # Docker Hub image
-        image: docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
-        ports:
-          # Opens tcp port 6379 on the host and service container
-          - 8080:8080
     steps:
       - name: Login To Docker
         uses: docker/login-action@v1
@@ -42,21 +34,6 @@ jobs:
           build-args: ${{ github.event.inputs.version }}
           push: true
           tags: docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
-      
-      # - name: Run the built image
-      #   id: image_run
-      #   run: docker run -d --network host --name=blizz-test docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
-      
-      # - name: Get the IP of the running container
-      #   id: container-ip
-      #   run: echo "::set-output name=container_ip::$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' blizz-test)"
-
-      # - name: Test the image
-      #   id: image_test
-      #   run: curl "${{ steps.container-ip.outputs.container_ip }}:8080/version"
-      
-      - name: test the curl
-        run: curl localhost:8080/version 
 
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
