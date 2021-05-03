@@ -1,0 +1,39 @@
+name: Minikube Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version Number'     
+        required: true
+        default: test
+
+jobs:
+  minikube-test:
+    runs-on: ubuntu-latest
+    name: Find image and deploy
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: replace the version_number
+      run: sed -n 's/BLIZZ_VERSION/${{ github.event.inputs.version }}' deployment/deployment.yaml
+
+    - name: verify the substituion
+      run: cat deployment/deployment.yaml | grep "image"
+
+    - name: Start minikube
+      uses: medyagh/setup-minikube@master
+
+    - name: Try the cluster !
+      run: kubectl get pods 
+
+    - name: Deploy to minikube
+      run: 
+        kubectl apply -f deployment
+
+    - name: Test service URLs
+      run: | 
+        minikube service list
+        minikube service blizz-server --url
+        echo -n "------------------opening the service------------------"
+        curl $(minikube service blizz-server --url)/version
