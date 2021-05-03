@@ -41,6 +41,21 @@ Testing
 ```
 minikube service blizz-server --url
 curl $(minikube service blizz-server --url)/version
+```
+
+Testing Redis
+```
+Shell 1:
+kubectl port-forward svc/redis-master 6379:6379
+Forwarding from 127.0.0.1:6379 -> 6379
+Forwarding from [::1]:6379 -> 6379
+Handling connection for 6379
+
+Shell 2:
+redis-cli -h localhost -p 6379
+localhost:6379> PING
+PONG
+```
 
 ## The problem statement
 ```
