@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blizz-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blizz-server
+  template:
+    metadata:
+      labels:
+        app: blizz-server
+    spec:
+      containers:
+      - name: blizz-server
+        image: docker.io/shreyasgune/blizz-server:BLIZZ_VERSION
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /version
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
