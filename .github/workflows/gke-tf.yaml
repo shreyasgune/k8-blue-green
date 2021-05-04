@@ -9,13 +9,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Get and Set GCP Credentials
-        run: touch gke-tf/terraform-gke-keyfile.json && echo ${{ secrets.SGUNE_TERRAFORM_SA }} > gke-tf/terraform-gke-keyfile.json
+        run: echo "${{ secrets.SGUNE_TERRAFORM_SA }}" > gke-tf/terraform-gke-keyfile.json
 
       - name: terraform fmt
         uses: dflook/terraform-fmt@v1
         with:
           path: my-terraform-config
-          
+
       - name: terraform plan
         uses: dflook/terraform-plan@v1
         with:
