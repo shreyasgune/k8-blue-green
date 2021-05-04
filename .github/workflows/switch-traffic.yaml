@@ -1,4 +1,4 @@
-name: GKE Deploy
+name: Switch Traffic
 
 on:
   workflow_dispatch:
@@ -9,7 +9,7 @@ on:
         default: test
 
 jobs:
-  gke-deploy:
+  switch-traffic:
     runs-on: ubuntu-latest
     name: Find image and deploy
     steps:
@@ -33,10 +33,10 @@ jobs:
         cli: gcloud
       
     - name: replace the version_number in manifests
-      run: sed -in 's/{{BLIZZ_VERSION}}/${{ github.event.inputs.version }}/g' k8s/k8s-gke/*.yaml
+      run: sed -in 's/{{BLIZZ_VERSION}}/${{ github.event.inputs.version }}/g' k8s/k8s-gke/svc.yaml
 
     - name: verify the substituion
-      run: cat k8s/k8s-gke/deployment.yaml | grep "image"
+      run: cat k8s/k8s-gke/svc.yaml | grep "app"
 
     - name: Check kubectl functionality
       uses: actions-hub/gcloud@master
@@ -53,20 +53,11 @@ jobs:
         PROJECT_ID: gman-289801
         APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       with:
-        args: apply -f k8s/k8s-gke
-        cli: kubectl
-  
-    - name: Get List of Pods
-      uses: actions-hub/gcloud@master
-      env:
-        PROJECT_ID: gman-289801
-        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-      with:
-        args: get pods
+        args: apply -f k8s/k8s-gke/svc.yaml
         cli: kubectl
 
     - name: Wait for the LB to get the Public IP
-      run: sleep 60
+      run: sleep 5
 
     - name: Get List of Services
       uses: actions-hub/gcloud@master
@@ -76,4 +67,3 @@ jobs:
       with:
         args: get svc
         cli: kubectl
-
