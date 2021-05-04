@@ -155,9 +155,9 @@ You can also run the following jobs if you don't wish to do local-testing
     - Creates a sandboxed Minikube cluster of 1 on the github-runner
     - Deploys a particular version in Minikube
     - Tests it
-- `gke-deploy.yaml` workflow: takes a version and deploys it to the `blizz-cluster` in GKE
-- `switch-traffic.yaml` workflow: switches traffic to a certain version of deployment
-- `security-scan.yaml` workflow: scans the image tag via version, tells you about the vulnerabilities
+- `gke-deploy` workflow: takes a version and deploys it to the `blizz-cluster` in GKE
+- `switch-traffic` workflow: switches traffic to a certain version of deployment
+- `security-scan` workflow: scans the image tag via version, tells you about the vulnerabilities
 
 # Deploy and Test to GKE
 Use the Github Actions jobs to deploy and test a certain version of your app.
@@ -173,9 +173,12 @@ Use the Github Actions jobs to deploy and test a certain version of your app.
 
 
 ## Future Work
+- HELM
+    > I know that `sed` substitution is wonky and `helm` is the way to go. I just need to do it over the next weekend. HELM2 vs HELM3 has thrown me off into a time sink before so I kinda wanted to get this first draft out ASAP.
 - Getting Terraform to work, [files found here](assets/gke-tf.yaml)
 - Speaking with [Redis Deployment](assets/redis-cluster-manifests)
 - Figure out why in-pod redis doesn't look so happy
+    > I'm gonna start with two local containers and then go from there.
 
 ## The problem statement
 ```
