@@ -19,5 +19,4 @@ jobs:
         uses: dflook/terraform-plan@v1
         with:
           path: gke-tf
-          variables:
-            access_token = "${{ secrets.SGUNE_TERRAFORM_SA }}"
+          access_token: ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
