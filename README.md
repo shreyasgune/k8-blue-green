@@ -1,7 +1,8 @@
 # k8-blue-green
 This repo contains a sample python server and the deployment manifests.
 
-![example workflow](https://github.com/github/docs/actions/workflows/security-scan.yaml/badge.svg)
+### Job Statuses
+[![Image Build and Push](https://github.com/shreyasgune/k8-blue-green/workflows/app-build-push/badge.svg)](https://github.com/shreyasgune/k8-blue-green/workflows/app-build-push/actions)
 
 ## Local Testing
 
