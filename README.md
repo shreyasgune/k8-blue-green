@@ -25,6 +25,9 @@ curl -s http://localhost:8080/api/v1/translate\?phrase\=Lol
 
 
 ### Docker Build and Push
+
+Image Repo: [shreyasgune/blizz-server](https://hub.docker.com/repository/docker/shreyasgune/blizz-server)
+
 ```
 docker build --build-arg BLIZZ_VERSION=test  -t shreyasgune/blizz-server:test .
 ```
