@@ -9,6 +9,7 @@ This repo contains a sample python server and the deployment manifests.
 ![CodeQL Scan](https://github.com/shreyasgune/k8-blue-green/workflows/CodeQL/badge.svg)
 ![GKE Deploy](https://github.com/shreyasgune/k8-blue-green/workflows/GKE%20Deploy/badge.svg)
 ![Switch Traffic](https://github.com/shreyasgune/k8-blue-green/workflows/Switch%20Traffic/badge.svg)
+[![Kubesec](https://github.com/shreyasgune/k8-blue-green/actions/workflows/kubesec-analysis.yml/badge.svg)](https://github.com/shreyasgune/k8-blue-green/actions/workflows/kubesec-analysis.yml)
 
 
 
