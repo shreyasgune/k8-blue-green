@@ -10,7 +10,7 @@ jobs:
       
       - name: get creds file in
         working-directory: ./gke-tf
-        run: echo ${{ secrets.SGUNE_TERRAFORM_SA }} > creds.json
+        run: echo "${{ secrets.SGUNE_TERRAFORM_SA }}" > creds.json
       
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
