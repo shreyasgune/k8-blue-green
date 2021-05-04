@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        
+
       - name: terraform fmt
         uses: dflook/terraform-fmt@v1
         with:
@@ -19,3 +19,5 @@ jobs:
         uses: dflook/terraform-plan@v1
         with:
           path: gke-tf
+          variables:
+            access_token = "${{ secrets.SGUNE_TERRAFORM_SA }}"
