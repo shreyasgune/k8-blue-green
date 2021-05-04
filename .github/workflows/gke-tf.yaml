@@ -4,8 +4,6 @@ on: [pull_request]
 jobs:
   GKE-deploy:
     runs-on: ubuntu-latest
-    env:
-      GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.SGUNE_TERRAFORM_SA }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -15,12 +13,6 @@ jobs:
         with:
           terraform_version: 0.14.6
           path: ./gke-tf
-
-      - name: Terraform Fmt
-        working-directory: ./gke-tf
-        id: fmt
-        run: terraform fmt -check -diff
-        continue-on-error: true
 
       - name: Terraform Init
         working-directory: ./gke-tf
@@ -35,6 +27,8 @@ jobs:
         continue-on-error: true
 
       - name: Terraform Plan
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.SGUNE_TERRAFORM_SA }} 
         working-directory: ./gke-tf
         id: plan
         run: terraform plan -no-color
