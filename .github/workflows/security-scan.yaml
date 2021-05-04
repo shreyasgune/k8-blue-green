@@ -1,0 +1,19 @@
+name: Image Test
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version Number'     
+        required: true
+        default: test
+
+jobs:
+  docker-build-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Security Scan
+        run: docker scan docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
+
+
+

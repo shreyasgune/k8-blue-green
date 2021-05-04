@@ -139,6 +139,7 @@ You can also run the following jobs if you don't wish to do local-testing
     - Tests it
 - `gke-deploy.yaml` workflow: takes a version and deploys it to the `blizz-cluster` in GKE
 - `switch-traffic.yaml` workflow: switches traffic to a certain version of deployment
+- `security-scan.yaml` workflow: scans the image tag via version, tells you about the vulnerabilities
 
 # Deploy and Test to GKE
 Use the Github Actions jobs to deploy and test a certain version of your app.
