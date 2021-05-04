@@ -3,6 +3,14 @@ This repo contains a sample python server and the deployment manifests.
 
 ### Job Statuses
 ![Image Build and Push](https://github.com/shreyasgune/k8-blue-green/workflows/Image%20Publish/badge.svg)
+![Image Test](https://github.com/shreyasgune/k8-blue-green/workflows/Image%20Test/badge.svg)
+![Security Scan](https://github.com/shreyasgune/k8-blue-green/workflows/Security%20Scan/badge.svg)
+![Minikube Test](https://github.com/shreyasgune/k8-blue-green/workflows/Minikube%20Test/badge.svg)
+![CodeQL Scan](https://github.com/shreyasgune/k8-blue-green/workflows/CodeQL/badge.svg)
+![GKE Deploy](https://github.com/shreyasgune/k8-blue-green/workflows/GKE%20Deploy/badge.svg)
+![Switch Traffic](https://github.com/shreyasgune/k8-blue-green/workflows/Switch%20Traffic/badge.svg)
+
+
 
 ## Local Testing
 
