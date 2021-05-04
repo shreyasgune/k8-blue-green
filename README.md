@@ -171,57 +171,16 @@ Use the Github Actions jobs to deploy and test a certain version of your app.
 - Services
 ![](assets/images/svc.png)
 
+------
+
+[Redis Investigation](logs/redis-investigation.log)
+![](assets/images/redis-investigation.png)
 
 ## Future Work
 - HELM
-    > I know that `sed` substitution is wonky and `helm` is the way to go. I just need to do it over the next weekend. HELM2 vs HELM3 has thrown me off into a time sink before so I kinda wanted to get this first draft out ASAP.
+    > I know that `sed` substitution is wonky and `helm` is the way to go. I just need to do it over the next weekend. HELM2 vs HELM3 has thrown me off into a time sink before so I kinda wanted to get this first draft out first.
 - Getting Terraform to work, [files found here](assets/gke-tf.yaml)
 - Speaking with [Redis Deployment](assets/redis-cluster-manifests)
-- Redis Investigation
-```
-Shell 1:
-λ docker run -p 6379:6379 --name gman-redis redis 
-1:C 04 May 2021 19:59:35.730 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
-1:C 04 May 2021 19:59:35.730 # Redis version=6.2.3, bits=64, commit=00000000, modified=0, pid=1, just started
-1:C 04 May 2021 19:59:35.730 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
-1:M 04 May 2021 19:59:35.731 * monotonic clock: POSIX clock_gettime
-1:M 04 May 2021 19:59:35.732 * Running mode=standalone, port=6379.
-1:M 04 May 2021 19:59:35.732 # Server initialized
-1:M 04 May 2021 19:59:35.732 * Ready to accept connections
-
-Shell 2:
-λ redis-cli -h localhost -p 6379     
-localhost:6379> ping
-PONG
-localhost:6379> monitor
-OK
-1620158768.174458 [0 172.17.0.3:53140] "HINCRBY" "requests_by_ip" "172.17.0.1" "1"
-1620158769.793243 [0 172.17.0.3:53162] "HINCRBY" "requests_by_ip" "172.17.0.1" "1"
-1620158770.478544 [0 172.17.0.3:53146] "HINCRBY" "requests_by_ip" "172.17.0.1" "1"
-
-Shell 3:
-λ export REDIS_ADDR=172.17.0.2                                 
-λ docker run -p 8080:8080 --name sgune-blizz -e REDIS_ADDR=$REDIS_ADDR  shreyasgune/blizz-server:test
-Bottle v0.12.19 server starting up (using GunicornServer(workers=4))...
-Listening on http://0.0.0.0:8080/
-Hit Ctrl-C to quit.
-
-[2021-05-04 20:00:51 +0000] [1] [INFO] Starting gunicorn 20.1.0
-[2021-05-04 20:00:51 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
-[2021-05-04 20:00:51 +0000] [1] [INFO] Using worker: sync
-[2021-05-04 20:00:51 +0000] [8] [INFO] Booting worker with pid: 8
-[2021-05-04 20:00:51 +0000] [9] [INFO] Booting worker with pid: 9
-[2021-05-04 20:00:51 +0000] [10] [INFO] Booting worker with pid: 10
-[2021-05-04 20:00:51 +0000] [11] [INFO] Booting worker with pid: 11
-
-Shell 4:
-λ curl http://localhost:8080/version                            
-{"version": "test", "errors": []}%
-
-λ curl http://localhost:8080/api/v1/translate\?phrase\=Lol    
-{"phrase": "Lol", "translation": "Kek", "errors": []}%
-```
-
 
 ## The problem statement
 ```
