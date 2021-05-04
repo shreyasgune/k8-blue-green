@@ -2,7 +2,7 @@
 This repo contains a sample python server and the deployment manifests.
 
 ### Job Statuses
-![Image Build and Push](https://github.com/shreyasgune/k8-blue-green/workflows/app-build-push/badge.svg)
+![Image Build and Push](https://github.com/shreyasgune/k8-blue-green/workflows/Image%20Publish/badge.svg)
 
 ## Local Testing
 
