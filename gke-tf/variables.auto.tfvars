@@ -1,7 +1,7 @@
 credentials        = "./terraform-gke-keyfile.json"
 project_id         = "gman-289801"
 region             = "us-east1"
-zones              = ["us-east1-c"]
+zones              = "us-east1-c"
 name               = "gke-cluster"
 machine_type       = "g1-small"
 min_count          = 1
