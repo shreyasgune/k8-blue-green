@@ -9,11 +9,13 @@ on:
         default: test
 
 jobs:
-  docker-build-push:
+  run-scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Security Scan
-        run: docker scan docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
+      - name: Scan image
+        uses: anchore/scan-action@v2
+        with:
+          image: "docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}"
 
 
 
