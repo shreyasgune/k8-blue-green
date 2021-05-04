@@ -1,0 +1,22 @@
+name: GKE Terraform Deploy
+on: [pull_request]
+
+jobs:
+  GKE-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Get and Set GCP Credentials
+        run: touch gke-tf/terraform-gke-keyfile.json && echo ${{ secrets.SGUNE_TERRAFORM_SA }} > gke-tf/terraform-gke-keyfile.json
+
+      - name: terraform fmt
+        uses: dflook/terraform-fmt@v1
+        with:
+          path: my-terraform-config
+          
+      - name: terraform plan
+        uses: dflook/terraform-plan@v1
+        with:
+          path: gke-tf
