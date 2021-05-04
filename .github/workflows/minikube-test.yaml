@@ -42,5 +42,5 @@ jobs:
         sleep 4 
         minikube service blizz-server --url
         echo -n "\n------------------opening the service------------------\n"
-        sleep 4
+        sleep 10
         curl $(minikube service blizz-server --url)/version
