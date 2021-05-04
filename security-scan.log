@@ -1,0 +1,735 @@
+
+Testing docker.io/shreyasgune/blizz-server:test...
+
+✗ Low severity vulnerability found in tar
+  Description: Out-of-bounds Read
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-TAR-1063001
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > tar@1.30+dfsg-6
+
+✗ Low severity vulnerability found in tar
+  Description: CVE-2005-2541
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-TAR-312331
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > tar@1.30+dfsg-6
+
+✗ Low severity vulnerability found in tar
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-TAR-341203
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > tar@1.30+dfsg-6
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: Link Following
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SYSTEMD-305144
+  Introduced through: systemd/libsystemd0@241-7~deb10u2, util-linux/bsdutils@1:2.33.1-0.1, apt@1.8.2, util-linux/mount@2.33.1-0.1, systemd/libudev1@241-7~deb10u2
+  From: systemd/libsystemd0@241-7~deb10u2
+  From: util-linux/bsdutils@1:2.33.1-0.1 > systemd/libsystemd0@241-7~deb10u2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2
+  and 4 more...
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: Missing Release of Resource after Effective Lifetime
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SYSTEMD-542807
+  Introduced through: systemd/libsystemd0@241-7~deb10u2, util-linux/bsdutils@1:2.33.1-0.1, apt@1.8.2, util-linux/mount@2.33.1-0.1, systemd/libudev1@241-7~deb10u2
+  From: systemd/libsystemd0@241-7~deb10u2
+  From: util-linux/bsdutils@1:2.33.1-0.1 > systemd/libsystemd0@241-7~deb10u2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2
+  and 4 more...
+
+✗ Low severity vulnerability found in systemd/libsystemd0
+  Description: Improper Input Validation
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SYSTEMD-570991
+  Introduced through: systemd/libsystemd0@241-7~deb10u2, util-linux/bsdutils@1:2.33.1-0.1, apt@1.8.2, util-linux/mount@2.33.1-0.1, systemd/libudev1@241-7~deb10u2
+  From: systemd/libsystemd0@241-7~deb10u2
+  From: util-linux/bsdutils@1:2.33.1-0.1 > systemd/libsystemd0@241-7~deb10u2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2
+  and 4 more...
+
+✗ Low severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Improper Input Validation
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-535712
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+
+✗ Low severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Use After Free
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-565214
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Time-of-check Time-of-use (TOCTOU)
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SHADOW-306205
+  Introduced through: shadow/passwd@1:4.5-1.1, adduser@3.118, shadow/login@1:4.5-1.1, util-linux/mount@2.33.1-0.1
+  From: shadow/passwd@1:4.5-1.1
+  From: adduser@3.118 > shadow/passwd@1:4.5-1.1
+  From: shadow/login@1:4.5-1.1
+  and 1 more...
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Incorrect Permission Assignment for Critical Resource
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SHADOW-306230
+  Introduced through: shadow/passwd@1:4.5-1.1, adduser@3.118, shadow/login@1:4.5-1.1, util-linux/mount@2.33.1-0.1
+  From: shadow/passwd@1:4.5-1.1
+  From: adduser@3.118 > shadow/passwd@1:4.5-1.1
+  From: shadow/login@1:4.5-1.1
+  and 1 more...
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Access Restriction Bypass
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SHADOW-306250
+  Introduced through: shadow/passwd@1:4.5-1.1, adduser@3.118, shadow/login@1:4.5-1.1, util-linux/mount@2.33.1-0.1
+  From: shadow/passwd@1:4.5-1.1
+  From: adduser@3.118 > shadow/passwd@1:4.5-1.1
+  From: shadow/login@1:4.5-1.1
+  and 1 more...
+
+✗ Low severity vulnerability found in shadow/passwd
+  Description: Incorrect Permission Assignment for Critical Resource
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SHADOW-539852
+  Introduced through: shadow/passwd@1:4.5-1.1, adduser@3.118, shadow/login@1:4.5-1.1, util-linux/mount@2.33.1-0.1
+  From: shadow/passwd@1:4.5-1.1
+  From: adduser@3.118 > shadow/passwd@1:4.5-1.1
+  From: shadow/login@1:4.5-1.1
+  and 1 more...
+
+✗ Low severity vulnerability found in perl/perl-base
+  Description: Link Following
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PERL-327793
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > perl/perl-base@5.28.1-6
+
+✗ Low severity vulnerability found in pcre3/libpcre3
+  Description: Out-of-Bounds
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PCRE3-345321
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > pcre3/libpcre3@2:8.39-12
+
+✗ Low severity vulnerability found in pcre3/libpcre3
+  Description: Out-of-Bounds
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PCRE3-345353
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > pcre3/libpcre3@2:8.39-12
+
+✗ Low severity vulnerability found in pcre3/libpcre3
+  Description: Uncontrolled Recursion
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PCRE3-345502
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > pcre3/libpcre3@2:8.39-12
+
+✗ Low severity vulnerability found in pcre3/libpcre3
+  Description: Out-of-Bounds
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PCRE3-345530
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > pcre3/libpcre3@2:8.39-12
+
+✗ Low severity vulnerability found in pcre3/libpcre3
+  Description: Out-of-bounds Read
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PCRE3-572368
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > pcre3/libpcre3@2:8.39-12
+
+✗ Low severity vulnerability found in openssl/libssl1.1
+  Description: Cryptographic Issues
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-OPENSSL-374709
+  Introduced through: openssl/libssl1.1@1.1.1d-0+deb10u2, ca-certificates@20190110
+  From: openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2 > openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2
+
+✗ Low severity vulnerability found in openssl/libssl1.1
+  Description: Cryptographic Issues
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-OPENSSL-374996
+  Introduced through: openssl/libssl1.1@1.1.1d-0+deb10u2, ca-certificates@20190110
+  From: openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2 > openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2
+
+✗ Low severity vulnerability found in lz4/liblz4-1
+  Description: CVE-2021-3520
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LZ4-1277601
+  Introduced through: lz4/liblz4-1@1.8.3-1, apt@1.8.2
+  From: lz4/liblz4-1@1.8.3-1
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > lz4/liblz4-1@1.8.3-1
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2 > lz4/liblz4-1@1.8.3-1
+
+✗ Low severity vulnerability found in lz4/liblz4-1
+  Description: Buffer Overflow
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LZ4-473072
+  Introduced through: lz4/liblz4-1@1.8.3-1, apt@1.8.2
+  From: lz4/liblz4-1@1.8.3-1
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > lz4/liblz4-1@1.8.3-1
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2 > lz4/liblz4-1@1.8.3-1
+
+✗ Low severity vulnerability found in libtasn1-6
+  Description: Resource Management Errors
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LIBTASN16-339585
+  Introduced through: libtasn1-6@4.13-3, apt@1.8.2
+  From: libtasn1-6@4.13-3
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4 > libtasn1-6@4.13-3
+
+✗ Low severity vulnerability found in libseccomp/libseccomp2
+  Description: Access Restriction Bypass
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LIBSECCOMP-341044
+  Introduced through: libseccomp/libseccomp2@2.3.3-4, apt@1.8.2
+  From: libseccomp/libseccomp2@2.3.3-4
+  From: apt@1.8.2 > libseccomp/libseccomp2@2.3.3-4
+
+✗ Low severity vulnerability found in libgcrypt20
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LIBGCRYPT20-391902
+  Introduced through: libgcrypt20@1.8.4-5, apt@1.8.2
+  From: libgcrypt20@1.8.4-5
+  From: apt@1.8.2 > gnupg2/gpgv@2.2.12-1+deb10u1 > libgcrypt20@1.8.4-5
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2 > libgcrypt20@1.8.4-5
+
+✗ Low severity vulnerability found in gnutls28/libgnutls30
+  Description: Improper Input Validation
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GNUTLS28-340755
+  Introduced through: gnutls28/libgnutls30@3.6.7-4, apt@1.8.2
+  From: gnutls28/libgnutls30@3.6.7-4
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4
+
+✗ Low severity vulnerability found in gnupg2/gpgv
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GNUPG2-535553
+  Introduced through: gnupg2/gpgv@2.2.12-1+deb10u1, apt@1.8.2
+  From: gnupg2/gpgv@2.2.12-1+deb10u1
+  From: apt@1.8.2 > gnupg2/gpgv@2.2.12-1+deb10u1
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Double Free
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-1078993
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Uncontrolled Recursion
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-338106
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Uncontrolled Recursion
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-338163
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Improper Input Validation
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-356371
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Resource Management Errors
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-356671
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Resource Management Errors
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-356735
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: CVE-2010-4051
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-356875
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Out-of-Bounds
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-452228
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Access Restriction Bypass
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-452267
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Use of Insufficiently Random Values
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-453375
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Information Exposure
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-453640
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Information Exposure
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-534995
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in glibc/libc-bin
+  Description: Integer Underflow
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-564233
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Low severity vulnerability found in expat/libexpat1
+  Description: Access Restriction Bypass
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-EXPAT-358079
+  Introduced through: expat/libexpat1@2.2.6-2+deb10u1
+  From: expat/libexpat1@2.2.6-2+deb10u1
+
+✗ Low severity vulnerability found in coreutils
+  Description: Improper Input Validation
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-COREUTILS-317465
+  Introduced through: coreutils@8.30-3
+  From: coreutils@8.30-3
+
+✗ Low severity vulnerability found in coreutils
+  Description: Race Condition
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-COREUTILS-317494
+  Introduced through: coreutils@8.30-3
+  From: coreutils@8.30-3
+
+✗ Low severity vulnerability found in bash
+  Description: Improper Check for Dropped Privileges
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-BASH-536280
+  Introduced through: bash@5.0-4
+  From: bash@5.0-4
+
+✗ Low severity vulnerability found in apt/libapt-pkg5.0
+  Description: Improper Verification of Cryptographic Signature
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-APT-407502
+  Introduced through: apt/libapt-pkg5.0@1.8.2, apt@1.8.2
+  From: apt/libapt-pkg5.0@1.8.2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2
+  From: apt@1.8.2
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Divide By Zero
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-466337
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Uncontrolled Recursion
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-537251
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Improper Handling of Exceptional Conditions
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-539769
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-570318
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-570323
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: CVE-2020-13631
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-570487
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-570498
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ Medium severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-574691
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ Medium severity vulnerability found in pcre3/libpcre3
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PCRE3-572367
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > pcre3/libpcre3@2:8.39-12
+
+✗ Medium severity vulnerability found in p11-kit/libp11-kit0
+  Description: Out-of-bounds Read
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-P11KIT-1050832
+  Introduced through: p11-kit/libp11-kit0@0.23.15-2, apt@1.8.2
+  From: p11-kit/libp11-kit0@0.23.15-2
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4 > p11-kit/libp11-kit0@0.23.15-2
+  Fixed in: 0.23.15-2+deb10u1
+
+✗ Medium severity vulnerability found in openssl/libssl1.1
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-OPENSSL-1049098
+  Introduced through: openssl/libssl1.1@1.1.1d-0+deb10u2, ca-certificates@20190110
+  From: openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2 > openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2
+  Fixed in: 1.1.1d-0+deb10u4
+
+✗ Medium severity vulnerability found in openssl/libssl1.1
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-OPENSSL-1075330
+  Introduced through: openssl/libssl1.1@1.1.1d-0+deb10u2, ca-certificates@20190110
+  From: openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2 > openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2
+  Fixed in: 1.1.1d-0+deb10u5
+
+✗ Medium severity vulnerability found in openssl/libssl1.1
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-OPENSSL-1089177
+  Introduced through: openssl/libssl1.1@1.1.1d-0+deb10u2, ca-certificates@20190110
+  From: openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2 > openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2
+  Fixed in: 1.1.1d-0+deb10u6
+
+✗ Medium severity vulnerability found in openssl/libssl1.1
+  Description: Information Exposure
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-OPENSSL-536856
+  Introduced through: openssl/libssl1.1@1.1.1d-0+deb10u2, ca-certificates@20190110
+  From: openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2 > openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2
+  Fixed in: 1.1.1d-0+deb10u5
+
+✗ Medium severity vulnerability found in libzstd/libzstd1
+  Description: Incorrect Default Permissions
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LIBZSTD-1080893
+  Introduced through: libzstd/libzstd1@1.3.8+dfsg-3, apt@1.8.2
+  From: libzstd/libzstd1@1.3.8+dfsg-3
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > libzstd/libzstd1@1.3.8+dfsg-3
+  Fixed in: 1.3.8+dfsg-3+deb10u1
+
+✗ Medium severity vulnerability found in libzstd/libzstd1
+  Description: Incorrect Default Permissions
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LIBZSTD-1080899
+  Introduced through: libzstd/libzstd1@1.3.8+dfsg-3, apt@1.8.2
+  From: libzstd/libzstd1@1.3.8+dfsg-3
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > libzstd/libzstd1@1.3.8+dfsg-3
+  Fixed in: 1.3.8+dfsg-3+deb10u2
+
+✗ Medium severity vulnerability found in libgcrypt20
+  Description: Race Condition
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LIBGCRYPT20-460489
+  Introduced through: libgcrypt20@1.8.4-5, apt@1.8.2
+  From: libgcrypt20@1.8.4-5
+  From: apt@1.8.2 > gnupg2/gpgv@2.2.12-1+deb10u1 > libgcrypt20@1.8.4-5
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2 > libgcrypt20@1.8.4-5
+
+✗ Medium severity vulnerability found in glibc/libc-bin
+  Description: Loop with Unreachable Exit Condition ('Infinite Loop')
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-1035462
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Medium severity vulnerability found in glibc/libc-bin
+  Description: Out-of-bounds Read
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-1055403
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Medium severity vulnerability found in glibc/libc-bin
+  Description: Out-of-Bounds
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-559181
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ Medium severity vulnerability found in e2fsprogs/libcom-err2
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-E2FSPROGS-540890
+  Introduced through: e2fsprogs/libcom-err2@1.44.5-1+deb10u2, e2fsprogs@1.44.5-1+deb10u2, e2fsprogs/libext2fs2@1.44.5-1+deb10u2, e2fsprogs/libss2@1.44.5-1+deb10u2
+  From: e2fsprogs/libcom-err2@1.44.5-1+deb10u2
+  From: e2fsprogs@1.44.5-1+deb10u2 > e2fsprogs/libcom-err2@1.44.5-1+deb10u2
+  From: e2fsprogs@1.44.5-1+deb10u2 > e2fsprogs/libss2@1.44.5-1+deb10u2 > e2fsprogs/libcom-err2@1.44.5-1+deb10u2
+  and 5 more...
+  Fixed in: 1.44.5-1+deb10u3
+
+✗ Medium severity vulnerability found in apt/libapt-pkg5.0
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-APT-1049974
+  Introduced through: apt/libapt-pkg5.0@1.8.2, apt@1.8.2
+  From: apt/libapt-pkg5.0@1.8.2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2
+  From: apt@1.8.2
+  Fixed in: 1.8.2.2
+
+✗ Medium severity vulnerability found in apt/libapt-pkg5.0
+  Description: Improper Input Validation
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-APT-568926
+  Introduced through: apt/libapt-pkg5.0@1.8.2, apt@1.8.2
+  From: apt/libapt-pkg5.0@1.8.2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2
+  From: apt@1.8.2
+  Fixed in: 1.8.2.1
+
+✗ High severity vulnerability found in systemd/libsystemd0
+  Description: Privilege Chaining
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SYSTEMD-345386
+  Introduced through: systemd/libsystemd0@241-7~deb10u2, util-linux/bsdutils@1:2.33.1-0.1, apt@1.8.2, util-linux/mount@2.33.1-0.1, systemd/libudev1@241-7~deb10u2
+  From: systemd/libsystemd0@241-7~deb10u2
+  From: util-linux/bsdutils@1:2.33.1-0.1 > systemd/libsystemd0@241-7~deb10u2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2
+  and 4 more...
+
+✗ High severity vulnerability found in systemd/libsystemd0
+  Description: Incorrect Privilege Assignment
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SYSTEMD-345391
+  Introduced through: systemd/libsystemd0@241-7~deb10u2, util-linux/bsdutils@1:2.33.1-0.1, apt@1.8.2, util-linux/mount@2.33.1-0.1, systemd/libudev1@241-7~deb10u2
+  From: systemd/libsystemd0@241-7~deb10u2
+  From: util-linux/bsdutils@1:2.33.1-0.1 > systemd/libsystemd0@241-7~deb10u2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2
+  and 4 more...
+
+✗ High severity vulnerability found in systemd/libsystemd0
+  Description: Use After Free
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SYSTEMD-546475
+  Introduced through: systemd/libsystemd0@241-7~deb10u2, util-linux/bsdutils@1:2.33.1-0.1, apt@1.8.2, util-linux/mount@2.33.1-0.1, systemd/libudev1@241-7~deb10u2
+  From: systemd/libsystemd0@241-7~deb10u2
+  From: util-linux/bsdutils@1:2.33.1-0.1 > systemd/libsystemd0@241-7~deb10u2
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > systemd/libsystemd0@241-7~deb10u2
+  and 4 more...
+  Fixed in: 241-7~deb10u4
+
+✗ High severity vulnerability found in sqlite3/libsqlite3-0
+  Description: CVE-2019-19603
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-537598
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+
+✗ High severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Unrestricted Upload of File with Dangerous Type
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-539763
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ High severity vulnerability found in sqlite3/libsqlite3-0
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-539773
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ High severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Improper Handling of Exceptional Conditions
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-540471
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ High severity vulnerability found in sqlite3/libsqlite3-0
+  Description: CVE-2019-19959
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-540568
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ High severity vulnerability found in sqlite3/libsqlite3-0
+  Description: Use After Free
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-SQLITE3-570494
+  Introduced through: sqlite3/libsqlite3-0@3.27.2-3
+  From: sqlite3/libsqlite3-0@3.27.2-3
+  Fixed in: 3.27.2-3+deb10u1
+
+✗ High severity vulnerability found in perl/perl-base
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PERL-570792
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > perl/perl-base@5.28.1-6
+  Fixed in: 5.28.1-6+deb10u1
+
+✗ High severity vulnerability found in perl/perl-base
+  Description: Buffer Overflow
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PERL-570797
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > perl/perl-base@5.28.1-6
+  Fixed in: 5.28.1-6+deb10u1
+
+✗ High severity vulnerability found in perl/perl-base
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-PERL-570802
+  Introduced through: meta-common-packages@meta
+  From: meta-common-packages@meta > perl/perl-base@5.28.1-6
+  Fixed in: 5.28.1-6+deb10u1
+
+✗ High severity vulnerability found in p11-kit/libp11-kit0
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-P11KIT-1050833
+  Introduced through: p11-kit/libp11-kit0@0.23.15-2, apt@1.8.2
+  From: p11-kit/libp11-kit0@0.23.15-2
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4 > p11-kit/libp11-kit0@0.23.15-2
+  Fixed in: 0.23.15-2+deb10u1
+
+✗ High severity vulnerability found in p11-kit/libp11-kit0
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-P11KIT-1050836
+  Introduced through: p11-kit/libp11-kit0@0.23.15-2, apt@1.8.2
+  From: p11-kit/libp11-kit0@0.23.15-2
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4 > p11-kit/libp11-kit0@0.23.15-2
+  Fixed in: 0.23.15-2+deb10u1
+
+✗ High severity vulnerability found in openssl/libssl1.1
+  Description: Integer Overflow or Wraparound
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-OPENSSL-1075326
+  Introduced through: openssl/libssl1.1@1.1.1d-0+deb10u2, ca-certificates@20190110
+  From: openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2 > openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2
+  Fixed in: 1.1.1d-0+deb10u5
+
+✗ High severity vulnerability found in openssl/libssl1.1
+  Description: NULL Pointer Dereference
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-OPENSSL-567125
+  Introduced through: openssl/libssl1.1@1.1.1d-0+deb10u2, ca-certificates@20190110
+  From: openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2 > openssl/libssl1.1@1.1.1d-0+deb10u2
+  From: ca-certificates@20190110 > openssl@1.1.1d-0+deb10u2
+  Fixed in: 1.1.1d-0+deb10u3
+
+✗ High severity vulnerability found in nettle/libnettle6
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-NETTLE-1090205
+  Introduced through: nettle/libnettle6@3.4.1-1, apt@1.8.2, nettle/libhogweed4@3.4.1-1
+  From: nettle/libnettle6@3.4.1-1
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4 > nettle/libnettle6@3.4.1-1
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4 > nettle/libhogweed4@3.4.1-1 > nettle/libnettle6@3.4.1-1
+  and 2 more...
+
+✗ High severity vulnerability found in libidn2/libidn2-0
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LIBIDN2-474091
+  Introduced through: libidn2/libidn2-0@2.0.5-1, apt@1.8.2
+  From: libidn2/libidn2-0@2.0.5-1
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4 > libidn2/libidn2-0@2.0.5-1
+  Fixed in: 2.0.5-1+deb10u1
+
+✗ High severity vulnerability found in libidn2/libidn2-0
+  Description: Improper Input Validation
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-LIBIDN2-474100
+  Introduced through: libidn2/libidn2-0@2.0.5-1, apt@1.8.2
+  From: libidn2/libidn2-0@2.0.5-1
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4 > libidn2/libidn2-0@2.0.5-1
+
+✗ High severity vulnerability found in gnutls28/libgnutls30
+  Description: Use After Free
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GNUTLS28-1085094
+  Introduced through: gnutls28/libgnutls30@3.6.7-4, apt@1.8.2
+  From: gnutls28/libgnutls30@3.6.7-4
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4
+
+✗ High severity vulnerability found in gnutls28/libgnutls30
+  Description: Use After Free
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GNUTLS28-1085097
+  Introduced through: gnutls28/libgnutls30@3.6.7-4, apt@1.8.2
+  From: gnutls28/libgnutls30@3.6.7-4
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4
+
+✗ High severity vulnerability found in gnutls28/libgnutls30
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GNUTLS28-564383
+  Introduced through: gnutls28/libgnutls30@3.6.7-4, apt@1.8.2
+  From: gnutls28/libgnutls30@3.6.7-4
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4
+  Fixed in: 3.6.7-4+deb10u3
+
+✗ High severity vulnerability found in gnutls28/libgnutls30
+  Description: Use of a Broken or Risky Cryptographic Algorithm
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GNUTLS28-571282
+  Introduced through: gnutls28/libgnutls30@3.6.7-4, apt@1.8.2
+  From: gnutls28/libgnutls30@3.6.7-4
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4
+  Fixed in: 3.6.7-4+deb10u4
+
+✗ High severity vulnerability found in gnutls28/libgnutls30
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GNUTLS28-609778
+  Introduced through: gnutls28/libgnutls30@3.6.7-4, apt@1.8.2
+  From: gnutls28/libgnutls30@3.6.7-4
+  From: apt@1.8.2 > gnutls28/libgnutls30@3.6.7-4
+
+✗ High severity vulnerability found in glibc/libc-bin
+  Description: Reachable Assertion
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-1065768
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ High severity vulnerability found in glibc/libc-bin
+  Description: Out-of-bounds Write
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-559488
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ High severity vulnerability found in glibc/libc-bin
+  Description: Use After Free
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GLIBC-559493
+  Introduced through: glibc/libc-bin@2.28-10, meta-common-packages@meta
+  From: glibc/libc-bin@2.28-10
+  From: meta-common-packages@meta > glibc/libc6@2.28-10
+
+✗ High severity vulnerability found in gcc-8/libstdc++6
+  Description: Information Exposure
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GCC8-347558
+  Introduced through: gcc-8/libstdc++6@8.3.0-6, apt@1.8.2, meta-common-packages@meta
+  From: gcc-8/libstdc++6@8.3.0-6
+  From: apt@1.8.2 > gcc-8/libstdc++6@8.3.0-6
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > gcc-8/libstdc++6@8.3.0-6
+  and 2 more...
+
+✗ High severity vulnerability found in gcc-8/libstdc++6
+  Description: Insufficient Entropy
+  Info: https://snyk.io/vuln/SNYK-DEBIAN10-GCC8-469413
+  Introduced through: gcc-8/libstdc++6@8.3.0-6, apt@1.8.2, meta-common-packages@meta
+  From: gcc-8/libstdc++6@8.3.0-6
+  From: apt@1.8.2 > gcc-8/libstdc++6@8.3.0-6
+  From: apt@1.8.2 > apt/libapt-pkg5.0@1.8.2 > gcc-8/libstdc++6@8.3.0-6
+  and 2 more...
+
+
+
+Organization:      undefined
+Package manager:   deb
+Project name:      docker-image|docker.io/shreyasgune/blizz-server
+Docker image:      docker.io/shreyasgune/blizz-server:test
+Platform:          linux/amd64
+
+Tested 94 dependencies for known vulnerabilities, found 97 vulnerabilities.
+
+For more free scans that keep your images secure, sign up to Snyk at https://dockr.ly/3ePqVcp
+

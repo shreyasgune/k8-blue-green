@@ -4,7 +4,30 @@ This repo contains a sample python server and the deployment manifests.
 
 ## Local Testing
 
+### Run the app and test
+- app exec
+```
+cd app
+pip install --upgrade pip
+pip install -r requirements.txt
+python th3-server.py
+```
+
+- curl tests
+```
+curl -s http://localhost:8080/version
+    {"version": "test", "errors": []}
+
+curl -s http://localhost:8080/api/v1/translate\?phrase\=Lol
+    {"phrase": "Lol", "translation": "Kek", "errors": []}
+
+```
+
+
 ### Docker Build and Push
+
+Image Repo: [shreyasgune/blizz-server](https://hub.docker.com/repository/docker/shreyasgune/blizz-server)
+
 ```
 docker build --build-arg BLIZZ_VERSION=test  -t shreyasgune/blizz-server:test .
 ```
@@ -116,6 +139,7 @@ You can also run the following jobs if you don't wish to do local-testing
     - Tests it
 - `gke-deploy.yaml` workflow: takes a version and deploys it to the `blizz-cluster` in GKE
 - `switch-traffic.yaml` workflow: switches traffic to a certain version of deployment
+- `security-scan.yaml` workflow: scans the image tag via version, tells you about the vulnerabilities
 
 # Deploy and Test to GKE
 Use the Github Actions jobs to deploy and test a certain version of your app.
