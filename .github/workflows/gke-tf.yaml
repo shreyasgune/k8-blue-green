@@ -31,8 +31,8 @@ jobs:
         continue-on-error: true
 
       - name: Terraform Plan
-        env:
-          GOOGLE_APPLICATION_CREDENTIALS: "creds.json" 
+        # env:
+        #   GOOGLE_APPLICATION_CREDENTIALS: "creds.json" 
         working-directory: ./gke-tf
         id: plan
         run: terraform plan -no-color
