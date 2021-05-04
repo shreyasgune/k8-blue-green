@@ -114,8 +114,26 @@ You can also run the following jobs if you don't wish to do local-testing
     - Creates a sandboxed Minikube cluster of 1 on the github-runner
     - Deploys a particular version in Minikube
     - Tests it
+- `gke-deploy.yaml` workflow: takes a version and deploys it to the `blizz-cluster` in GKE
+- `switch-traffic.yaml` workflow: switches traffic to a certain version of deployment
+
+# Deploy and Test to GKE
+Use the Github Actions jobs to deploy and test a certain version of your app.
+
+[Example Job Run](https://github.com/shreyasgune/k8-blue-green/runs/2501600504?check_suite_focus=true)
+
+- Cluster
+![](assets/images/cluster.png)
+- Deployment
+![](assets/images/deployment.png)
+- Services
+![](assets/images/svc.png)
 
 
+## Future Work
+- Getting Terraform to work, [files found here](assets/gke-tf.yaml)
+- Speaking with [Redis Deployment](assets/redis-cluster-manifests)
+- Figure out why in-pod redis doesn't look so happy
 
 ## The problem statement
 ```
