@@ -4,6 +4,26 @@ This repo contains a sample python server and the deployment manifests.
 
 ## Local Testing
 
+### Run the app and test
+- app exec
+```
+cd app
+pip install --upgrade pip
+pip install -r requirements.txt
+python th3-server.py
+```
+
+- curl tests
+```
+curl -s http://localhost:8080/version
+    {"version": "test", "errors": []}
+
+curl -s http://localhost:8080/api/v1/translate\?phrase\=Lol
+    {"phrase": "Lol", "translation": "Kek", "errors": []}
+
+```
+
+
 ### Docker Build and Push
 ```
 docker build --build-arg BLIZZ_VERSION=test  -t shreyasgune/blizz-server:test .
