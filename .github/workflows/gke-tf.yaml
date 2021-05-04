@@ -10,13 +10,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: terraform fmt
-        uses: dflook/terraform-fmt@v1
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
         with:
-          path: gke-tf
+          terraform_version: 0.14.6
 
-      - name: terraform plan
-        uses: dflook/terraform-plan@v1
-        with:
-          path: gke-tf
-          access_token: ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
+      - name: Terraform Fmt
+        id: fmt
+        run: terraform fmt -check -diff
+        continue-on-error: true
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+        continue-on-error: true
+
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate -no-color
+        continue-on-error: true
+
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -no-color
+        continue-on-error: true
