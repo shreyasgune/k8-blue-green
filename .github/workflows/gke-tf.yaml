@@ -8,12 +8,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      # - uses: actions-hub/gcloud@master
-      #   env:
-      #     PROJECT_ID: "gman-289801"
-      #     APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-      #   with:
-      #     args: auth application-default login
+      - uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: "gman-289801"
+          APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        with:
+          args: auth
+          cli: gcloud
         
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
