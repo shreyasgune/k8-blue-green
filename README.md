@@ -1,6 +1,7 @@
 # k8-blue-green
 This repo contains a sample python server and the deployment manifests.
 
+![example workflow](https://github.com/github/docs/actions/workflows/codeql-analysis.yml/badge.svg)
 
 ## Local Testing
 
