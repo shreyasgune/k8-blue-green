@@ -2,13 +2,23 @@
 This repo contains a sample python server and the deployment manifests.
 
 ### Job Statuses
+**Container Build and Test Jobs**
+
 ![Image Build and Push](https://github.com/shreyasgune/k8-blue-green/workflows/Image%20Publish/badge.svg)
 ![Image Test](https://github.com/shreyasgune/k8-blue-green/workflows/Image%20Test/badge.svg)
 ![Security Scan](https://github.com/shreyasgune/k8-blue-green/workflows/Security%20Scan/badge.svg)
+
+**Deploy Jobs**
+
 ![Minikube Test](https://github.com/shreyasgune/k8-blue-green/workflows/Minikube%20Test/badge.svg)
-![CodeQL Scan](https://github.com/shreyasgune/k8-blue-green/workflows/CodeQL/badge.svg)
 ![GKE Deploy](https://github.com/shreyasgune/k8-blue-green/workflows/GKE%20Deploy/badge.svg)
 ![Switch Traffic](https://github.com/shreyasgune/k8-blue-green/workflows/Switch%20Traffic/badge.svg)
+
+
+**Genereal Purpose Scan Jobs**
+
+![CodeQL Scan](https://github.com/shreyasgune/k8-blue-green/workflows/CodeQL/badge.svg)
+[![Snyk Container](https://github.com/shreyasgune/k8-blue-green/actions/workflows/snyk-container-analysis.yml/badge.svg)](https://github.com/shreyasgune/k8-blue-green/actions/workflows/snyk-container-analysis.yml)
 
 ## Local Testing
 
