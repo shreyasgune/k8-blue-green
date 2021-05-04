@@ -14,7 +14,7 @@ jobs:
       - name: terraform fmt
         uses: dflook/terraform-fmt@v1
         with:
-          path: my-terraform-config
+          path: gke-tf
 
       - name: terraform plan
         uses: dflook/terraform-plan@v1
