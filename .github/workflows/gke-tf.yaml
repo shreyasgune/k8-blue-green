@@ -32,7 +32,7 @@ jobs:
 
       - name: Terraform Plan
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: "./gke-tf/creds.json" 
+          GOOGLE_APPLICATION_CREDENTIALS: "creds.json" 
         working-directory: ./gke-tf
         id: plan
         run: terraform plan -no-color
