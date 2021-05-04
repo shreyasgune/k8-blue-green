@@ -1,39 +1,40 @@
-name: GKE Terraform Deploy
-on: [pull_request]
+# name: GKE Terraform Deploy
+# on:
+#   workflow_dispatch:
 
-jobs:
-  GKE-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+# jobs:
+#   GKE-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
       
-      - name: get creds file in
-        working-directory: ./gke-tf
-        run: echo "${{ secrets.SGUNE_TERRAFORM_SA }}" > creds.json
+#       - name: get creds file in
+#         working-directory: ./gke-tf
+#         run: echo "${{ secrets.SGUNE_TERRAFORM_SA }}" > creds.json
       
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 0.14.6
-          path: ./gke-tf
+#       - name: Setup Terraform
+#         uses: hashicorp/setup-terraform@v1
+#         with:
+#           terraform_version: 0.14.6
+#           path: ./gke-tf
 
-      - name: Terraform Init
-        working-directory: ./gke-tf
-        id: init
-        run: terraform init
-        continue-on-error: true
+#       - name: Terraform Init
+#         working-directory: ./gke-tf
+#         id: init
+#         run: terraform init
+#         continue-on-error: true
 
-      - name: Terraform Validate
-        working-directory: ./gke-tf
-        id: validate
-        run: terraform validate -no-color
-        continue-on-error: true
+#       - name: Terraform Validate
+#         working-directory: ./gke-tf
+#         id: validate
+#         run: terraform validate -no-color
+#         continue-on-error: true
 
-      - name: Terraform Plan
-        # env:
-        #   GOOGLE_APPLICATION_CREDENTIALS: "creds.json" 
-        working-directory: ./gke-tf
-        id: plan
-        run: terraform plan -no-color
-        continue-on-error: true
+#       - name: Terraform Plan
+#         # env:
+#         #   GOOGLE_APPLICATION_CREDENTIALS: "creds.json" 
+#         working-directory: ./gke-tf
+#         id: plan
+#         run: terraform plan -no-color
+#         continue-on-error: true
