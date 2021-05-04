@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          path: ./gke-tf
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
