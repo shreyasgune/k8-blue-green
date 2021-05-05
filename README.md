@@ -223,7 +223,8 @@ Use the Github Actions jobs to deploy and test a certain version of your app.
 
 ## Future Work
 - Getting SSL on these!
-   > using cert-manager.io seems to be the best fastest way.
+   > using cert-manager.io seems to be the best fastest way. To test things out locally, follow instructions on `local-k8/ssl/readme.md`
+   ![](assets/image/ssl.png)
 - HELM
     > I know that `sed` substitution is wonky and `helm` is the way to go. I just need to do it over the next weekend. HELM2 vs HELM3 has thrown me off into a time sink before so I kinda wanted to get this first draft out first.
 - Getting Terraform to work, [files found here](assets/gke-tf.yaml)

@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingressrule
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/issuer: "letsencrypt-staging"
+spec:
+  tls:
+  - hosts:
+    - staging.blizz-server.com
+    secretName: blizz-server-staging-certificate
+  rules:
+    - host: staging.blizz-server.com
+      http:
+        paths:
+          - path: /version
+            backend:
+              serviceName: blizz-server
+              servicePort: 80
