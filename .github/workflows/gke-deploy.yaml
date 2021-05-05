@@ -11,7 +11,7 @@ on:
 jobs:
   gke-deploy:
     runs-on: ubuntu-latest
-    name: Find image and deploy
+    name: Deploy to GKE
     steps:
     - uses: actions/checkout@v2
 
