@@ -85,7 +85,7 @@ curl -s $(minikube service blizz-server --url)/version
     {"version": "test", "errors": []}
 ```
 
-Testing Redis if using `assets/redis` manifests
+Testing Redis if using `local-k8/redis` manifests
 ```
 Shell 1:
 kubectl port-forward svc/redis-master 6379:6379
@@ -97,29 +97,74 @@ Shell 2:
 redis-cli -h localhost -p 6379
 localhost:6379> PING
 PONG
+
+OR
+
+redis-cli monitor
+OK
+1620225607.237572 [0 172.17.0.14:51210] "INFO"
+1620225608.438684 [0 172.17.0.11:54306] "INFO"
+1620225610.620656 [0 172.17.0.15:50054] "INFO"
+1620225639.522110 [0 172.17.0.14:51558] "HINCRBY" "requests_by_ip" "127.0.0.1" "1"
 ```
 
 ## Testing BLUE-GREEN
+- Redis Setup
+```
+docker run -d -p 6379:6379 --name gman-redis redis
+redis-cli -h localhost -p 6379
+redis-cli monitor
+OK
+
+```
+
+
+
 - Build, test & push Blue Image
 ```
+export REDIS_ADDR=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' gman-redis)
 docker build --build-arg BLIZZ_VERSION=blue  -t shreyasgune/blizz-server:blue .
-docker run -d -p 8080:8080 --name sgune-blizz-blue  -it shreyasgune/blizz-server:blue
+docker run -d -p 8080:8080 -e REDIS_ADDR=$REDIS_ADDR --name sgune-blizz-blue shreyasgune/blizz-server:blue
+
 curl http://localhost:8080/version
     {"version": "blue", "errors": []}
+
+curl http://localhost:8080/api/v1/translate?phrase=Lol
+    {"phrase": "Lol", "translation": "Kek", "errors": []}
+
 docker push docker.io/shreyasgune/blizz-server:blue
 docker rm -f sgune-blizz-blue
 ```
 
 - Build, test & push Green Image
 ```
+export REDIS_ADDR=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' gman-redis)
 docker build --build-arg BLIZZ_VERSION=green  -t shreyasgune/blizz-server:green .
-docker run -d -p 8080:8080 --name sgune-blizz-green  -it shreyasgune/blizz-server:green
+docker run -d -p 8080:8080 -e REDIS_ADDR=$REDIS_ADDR --name sgune-blizz-green shreyasgune/blizz-server:green
+
 curl http://localhost:8080/version
     {"version": "green", "errors": []}
+
+curl http://localhost:8080/api/v1/translate?phrase=Lol
+    {"phrase": "Lol", "translation": "Kek", "errors": []}
+
 docker push docker.io/shreyasgune/blizz-server:green
 docker rm -f sgune-blizz-green
 ```
- 
+
+- Deploy Redis to Minkube
+```
+kubectl apply -f local-k8/redis
+configmap/app-configmap created
+deployment.apps/redis-master created
+service/redis-master created
+
+kubectl exec -it redis-master-<someval>-<someval> bash
+root@redis-master-<someval>-<someval>:/data# redis-cli monitor
+OK
+```
+> Keep your eyes on this shell, the requests you make to your app should pop their entries into this shell
+
 - Deploy Blue to Minikube
 ```
 sed 's/{{BLIZZ_VERSION}}/blue/g' k8s/*.yaml > blue.yaml && kubectl apply -f blue.yaml
@@ -139,7 +184,7 @@ deployment.apps/blizz-server-green created
 service/blizz-server changed
 ```
 
->Observe the ouput on the `ping-test.sh` shell
+>Observe the output on the `ping-test.sh` shell
 
 - Cleanup
 ```
