@@ -30,7 +30,10 @@ spec:
         - containerPort: 8080
         env:
           - name: REDIS_ADDR
-            value: localhost
+            valueFrom:
+              configMapKeyRef:
+                  name: app-configmap # name of the config-map
+                  key: redis-service # import the value of 'redis-service' from app-configmap
         livenessProbe:
           httpGet:
             path: /version
