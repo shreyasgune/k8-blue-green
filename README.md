@@ -204,7 +204,24 @@ You can also run the following jobs if you don't wish to do local-testing
 - `switch-traffic` workflow: switches traffic to a certain version of deployment
 - `security-scan` workflow: scans the image tag via version, tells you about the vulnerabilities
 
-# Deploy and Test to GKE
+### On Demand Deploy
+The `onDemand Deploy` workflow will let you Specify the cluster where you want to make an app deployment of a specific verison. It does not offer teardowns, cuz that might get dangerous.
+
+### Test Sandbox in GKE
+The `custom-GKE` workflow allows you to define:
+    - app version name
+    - cluster name
+    - testing window
+    - teardown boolean
+It will 
+    - create a Kubernetes Cluster with a particular name
+    - deploy your application in it
+    - expose a url you can hit
+    - wait till the time window you specify where you can run your tests
+    - tear down the whole thing after you're done
+
+
+## Deploy and Test to GKE
 Use the Github Actions jobs to deploy and test a certain version of your app.
 
 [Example Job Run](https://github.com/shreyasgune/k8-blue-green/runs/2501600504?check_suite_focus=true)
@@ -215,6 +232,7 @@ Use the Github Actions jobs to deploy and test a certain version of your app.
 ![](assets/images/deployment.png)
 - Services
 ![](assets/images/svc.png)
+
 
 ------
 
