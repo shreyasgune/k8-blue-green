@@ -1,4 +1,4 @@
-name: GKE Deploy
+name: Sandbox GKE
 
 on:
   workflow_dispatch:

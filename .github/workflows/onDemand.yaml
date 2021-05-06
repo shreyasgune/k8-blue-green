@@ -1,4 +1,4 @@
-name: GKE Deploy
+name: On Demand GKE
 
 on:
   workflow_dispatch:
