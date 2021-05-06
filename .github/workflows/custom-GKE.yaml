@@ -17,7 +17,7 @@ on:
         default: 120
 
 jobs:
-  gke-deploy:
+  sandbox-gke-deploy:
     runs-on: ubuntu-latest
     name: Deploy to GKE
     steps:
@@ -31,7 +31,7 @@ jobs:
       with:
         args: info
     
-    - name: Get Kubectl sorted
+    - name: Create Cluster
       uses: actions-hub/gcloud@master
       env:
         PROJECT_ID: gman-289801
