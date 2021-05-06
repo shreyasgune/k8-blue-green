@@ -222,8 +222,11 @@ Use the Github Actions jobs to deploy and test a certain version of your app.
 ![](assets/images/redis-investigation.png)
 
 ## Future Work
+- Fun With Caching
+    - Got a fastly fiddle going on https://fiddle.fastlydemo.net/fiddle/fc73453d 
+    - Try the HTML generated: https://htmlcodeeditor.com/ 
 - Getting SSL on these!
-   > using cert-manager.io seems to be the best fastest way.
+   > using cert-manager.io seems to be the best fastest way. Got my changes work in progress on [BLIZZ-ssl branch](https://github.com/shreyasgune/k8-blue-green/tree/BLIZZ-ssl/local-k8/ssl)
 - HELM
     > I know that `sed` substitution is wonky and `helm` is the way to go. I just need to do it over the next weekend. HELM2 vs HELM3 has thrown me off into a time sink before so I kinda wanted to get this first draft out first.
 - Getting Terraform to work, [files found here](assets/gke-tf.yaml)
