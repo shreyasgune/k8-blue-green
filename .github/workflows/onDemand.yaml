@@ -1,0 +1,91 @@
+name: GKE Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version Number'     
+        required: true
+        default: test
+      cluster:
+        description: 'Cluster Name'     
+        required: true
+        default: test
+
+jobs:
+  onDemand-gke-deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to onDemand GKE
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Gcloud 
+      uses: actions-hub/gcloud@master
+      env:
+        PROJECT_ID: gman-289801
+        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      with:
+        args: info
+
+    - name: Get Kubectl sorted
+      uses: actions-hub/gcloud@master
+      env:
+        PROJECT_ID: gman-289801
+        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      with:
+        args: container clusters get-credentials blizz-${{ github.event.inputs.cluster }} --zone us-central1-c --project gman-289801
+        cli: gcloud
+      
+    - name: replace the version_number in manifests
+      run: sed -in 's/{{BLIZZ_VERSION}}/${{ github.event.inputs.version }}/g' k8s/k8s-gke/*.yaml
+
+    - name: verify the substituion
+      run: cat k8s/k8s-gke/deployment.yaml | grep "image"
+
+    - name: Check kubectl functionality
+      uses: actions-hub/gcloud@master
+      env:
+        PROJECT_ID: gman-289801
+        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      with:
+        args: cluster-info
+        cli: kubectl
+
+    - name: Deploy Redis to blizz-cluster
+      uses: actions-hub/gcloud@master
+      env:
+        PROJECT_ID: gman-289801
+        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      with:
+        args: apply -f k8s/redis-gke
+        cli: kubectl
+
+    - name: Deploy to blizz-cluster
+      uses: actions-hub/gcloud@master
+      env:
+        PROJECT_ID: gman-289801
+        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      with:
+        args: apply -f k8s/k8s-gke
+        cli: kubectl
+    
+    - name: Get List of Pods
+      uses: actions-hub/gcloud@master
+      env:
+        PROJECT_ID: gman-289801
+        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      with:
+        args: get pods
+        cli: kubectl
+
+    - name: Wait for the LB to get the Public IP
+      run: sleep 60
+
+    - name: Get List of Services
+      uses: actions-hub/gcloud@master
+      env:
+        PROJECT_ID: gman-289801
+        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      with:
+        args: get svc
+        cli: kubectl
