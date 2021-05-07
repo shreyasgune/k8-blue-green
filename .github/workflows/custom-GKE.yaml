@@ -14,7 +14,7 @@ on:
       window:
         description: 'Testing Window Duration'
         required: true
-        default: 120
+        default: 60
 
 jobs:
   sandbox-gke-deploy:
@@ -24,7 +24,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Make sure the DockerImage Exists
-      run: docker image inspect docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
+      run: docker pull docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
 
     - name: Gcloud 
       uses: actions-hub/gcloud@master
