@@ -250,7 +250,9 @@ Use the Github Actions jobs to deploy and test a certain version of your app.
 - HELM
     > I know that `sed` substitution is wonky and `helm` is the way to go. I just need to do it over the next weekend. HELM2 vs HELM3 has thrown me off into a time sink before so I kinda wanted to get this first draft out first.
 - Getting Terraform to work, [files found here](assets/gke-tf.yaml)
+- Monitoring: Adding Prometheus+Grafana / Enabling Istio / stackdriver agent
 - Setting **SLO**, identify **SLIs** in service to those SLOs.
+- Alerting and Escalation Policies from those SLOs/SLIs
 
 ## The problem statement
 ```
