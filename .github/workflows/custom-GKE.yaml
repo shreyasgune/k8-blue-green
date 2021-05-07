@@ -19,9 +19,13 @@ on:
 jobs:
   sandbox-gke-deploy:
     runs-on: ubuntu-latest
-    name: Deploy to GKE
+    name: Sandbox GKE Deployment
     steps:
     - uses: actions/checkout@v2
+
+    - name: Make sure the DockerImage Exists
+      run: |
+        curl -sH "Authorization: JWT ${{ secrets.DOCKER_TOKEN }}" "https://hub.docker.com/v2/repositories/blizz-server/tags/${{ github.event.inputs.version }}/" | jq .
 
     - name: Gcloud 
       uses: actions-hub/gcloud@master
@@ -39,10 +43,7 @@ jobs:
       with:
         args: container clusters create blizz-${{ github.event.inputs.cluster }} --zone us-central1-c --num-nodes=1 --project gman-289801
         cli: gcloud
-    
-    - name: Wait for cluster to finish getting created
-      run: sleep 120
-
+  
     - name: Get Kubectl sorted
       uses: actions-hub/gcloud@master
       env:
@@ -115,5 +116,5 @@ jobs:
         PROJECT_ID: gman-289801
         APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       with:
-        args: container clusters delete blizz-${{ github.event.inputs.cluster }} --project gman-289801
+        args: container clusters delete blizz-${{ github.event.inputs.cluster }} --zone us-central1-c --project gman-289801
         cli: gcloud
