@@ -115,5 +115,5 @@ jobs:
         PROJECT_ID: gman-289801
         APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       with:
-        args: container clusters delete blizz-${{ github.event.inputs.cluster }} --zone us-central1-c --project gman-289801
+        args: container clusters delete blizz-${{ github.event.inputs.cluster }} --quiet --zone us-central1-c --project gman-289801
         cli: gcloud
