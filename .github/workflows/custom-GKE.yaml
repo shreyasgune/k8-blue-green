@@ -24,8 +24,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Make sure the DockerImage Exists
-      run: |
-        curl -sH "Authorization: JWT ${{ secrets.DOCKER_TOKEN }}" "https://hub.docker.com/v2/repositories/blizz-server/tags/${{ github.event.inputs.version }}/" | jq .
+      run: docker image inspect docker.io/shreyasgune/blizz-server:${{ github.event.inputs.version }}
 
     - name: Gcloud 
       uses: actions-hub/gcloud@master
