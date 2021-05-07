@@ -107,7 +107,7 @@ jobs:
         cli: kubectl
 
     - name: Testing Window Begins
-      name: sleep ${{ github.event.inputs.window }}
+      run: sleep ${{ github.event.inputs.window }}
     
     - name: Teardown
       uses: actions-hub/gcloud@master
