@@ -10,6 +10,8 @@ This repo contains a sample python server and the deployment manifests.
 
 **Deploy Jobs**
 
+[![On Demand GKE](https://github.com/shreyasgune/k8-blue-green/actions/workflows/onDemand.yaml/badge.svg?branch=main)](https://github.com/shreyasgune/k8-blue-green/actions/workflows/onDemand.yaml)
+[![Sandbox GKE](https://github.com/shreyasgune/k8-blue-green/actions/workflows/custom-GKE.yaml/badge.svg?branch=main)](https://github.com/shreyasgune/k8-blue-green/actions/workflows/custom-GKE.yaml)
 ![Minikube Test](https://github.com/shreyasgune/k8-blue-green/workflows/Minikube%20Test/badge.svg)
 ![GKE Deploy](https://github.com/shreyasgune/k8-blue-green/workflows/GKE%20Deploy/badge.svg)
 ![Switch Traffic](https://github.com/shreyasgune/k8-blue-green/workflows/Switch%20Traffic/badge.svg)
